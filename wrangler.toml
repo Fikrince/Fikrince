@@ -1,0 +1,19 @@
+name = "fikrince"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Farklı bir alan adından erişim için CORS izni (aynı alan adında Pages Functions için "*" veya kendi alan adınız)
+ALLOWED_ORIGIN = "*"
+
+# ÖNEMLİ: GEMINI_API_KEY gizli anahtarını asla bu dosyaya yazmayın!
+# Cloudflare Dashboard -> Pages -> Settings -> Environment variables üzerinden Secret olarak ekleyin.
+# Yerel geliştirme için .dev.vars dosyasında GEMINI_API_KEY="..." şeklinde tanımlayın.
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fikrince-db"
+# `npx wrangler d1 create fikrince-db` komutunun ürettiği ID'yi buraya yapıştırın:
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+migrations_dir = "migrations"
